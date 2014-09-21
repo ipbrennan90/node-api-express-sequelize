@@ -1,0 +1,55 @@
+{
+  "name": "node-api-express-sequelize",
+  "description": "A boilerplate API application for express with sequelize",
+  "version": "1.0.0",
+  "author": {
+    "name": "Jeka Moroz",
+    "email": "eugen.v.moroz@gmail.com"
+  },
+  "engines": {
+    "node": "0.10.x"
+  },
+  "scripts": {
+    "start": "NODE_PATH=./config NODE_ENV=development ./node_modules/.bin/nodemon server.js localhost 3100",
+    "test": "make test"
+  },
+  "dependencies": {
+    "async": "latest",
+    "body-parser": "latest",
+    "compression": "latest",
+    "cookie-parser": "latest",
+    "cors": "latest",
+    "errorhandler": "latest",
+    "express": "latest",
+    "express-jwt": "latest",
+    "express-session": "latest",
+    "express-params": "latest",
+    "jsonwebtoken": "latest",
+    "method-override": "latest",
+    "morgan": "latest",
+    "multer": "latest",
+    "mysql": "latest",
+    "mariasql": "latest",
+    "winston": "latest",
+    "sequelize": "latest"
+  },
+  "devDependencies": {
+    "nodemon": "latest",
+    "mocha": "latest",
+    "should": "latest",
+    "supertest": "latest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jekamoroz/node-api-express-sequelize.git"
+  },
+  "keywords": [
+    "mvc",
+    "mysql",
+    "mariadb",
+    "api",
+    "mongo",
+    "express",
+    "boilerplate"
+  ]
+}
