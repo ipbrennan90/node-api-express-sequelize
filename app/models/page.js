@@ -31,16 +31,19 @@ module.exports = function(sequelize, DataTypes) {
           args: [/^(\w+[-\w+]+)$/],
           msg: 'Slug contain only letters, numbers and short dashes "-"'
         },
-        isUnique: function(value, next) {
+        isUnique: function (value, next) {
           Page.find({
-            where: {slug: value},
+            where: {id: {ne: this.id}, slug: value},
             attributes: ['id']
-          })
-            .done(function(error, page) {
-              if (error)
-                return next(error);
-              return !page;
-            });
+          }).complete(function (err, page) {
+            if (err) {
+              next(err);
+            }
+            if (page) {
+              next(new Error('Page slug already in use'));
+            }
+            next();
+          });
         }
       },
       allowNull: true
